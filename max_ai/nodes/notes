@@ -1,0 +1,146 @@
+to do list
+change self.chunkSequences in sa.py to sort into 5w1h catagories
+
+
+using triples to store memory
+
+subject
+predicate a verb statement
+object
+
+q   what is a dog
+SELECT o FROM triple WHERE p = 'is a' AND  s = 'dog';
+A
+ a dog is a canine
+
+we could use tables to name predicates
+and row for the data
+table is_a
+o     s
+dog canine
+SELECT s FROM is_a WHERE o = 'dog';
+we can add more rows for extra data
+
+
+
+tables
+is_in
+is_on
+is person
+has_name
+
+from patern we neeed to sort text into 5w1h
+What
+What, specifically,...?
+What next?
+What else?
+Where
+Where else?
+Where are you?
+Where, exactly...?
+When
+When, exactly, will you...?
+When will it start/end?
+When will I know?
+Why
+Why does that happen?
+Why not?
+(just keep asking 'why?' to find root cause - often around 5 times)
+How
+How many?
+How much?
+How does it work?
+Who
+Who will do this?
+Who else will do this?
+Who pays?
+Who benefits?
+
+cursor = conn.execute("SELECT s  from is_a WHERE O =' '")
+for row in cursor:
+   print "ID = ", row[0]
+   print "NAME = ", row[1]
+   print "ADDRESS = ", row[2]
+   print "SALARY = ", row[3], "\n"
+
+
+
+
+
+so far we can /have
+location statements
+where is questions
+in, on 
+
+not is
+not all words a correctly recognised 
+peter is a verb
+bonn is a adj
+
+main key is ID
+2nd key is concept ie  cat dog
+3rd key is descriptive  ie blue zoe forms part of concept to make concept cat blue??????????????
+4 th key is location ie mat xyz
+5 key is 
+
+last key is properties ie age: is a dictionary
+
+ how to link to ontology??????????
+
+add memory 
+
+no concept found
+we have cat not cat blue
+or cat zoe
+
+update a memory
+
+concept found but statement is false
+ie memory is cat on the mat
+new statement is cat is on the roof
+
+sqlite notes
+
+import sqlite3
+import time
+from datetime import date, datetime
+
+
+dt = datetime.now()
+RM  = sqlite3.connect('robbie_memory.sqlite')
+cursor = RM.cursor()
+
+cursor.execute('''CREATE TABLE RAW_INPUT
+       (ID INTEGER PRIMARY KEY   AUTOINCREMENT,
+       RAW           TEXT    NOT NULL,
+       DATE            DATETIME     NOT NULL);''')
+
+
+
+cursor.execute('''CREATE TABLE memory
+       (ID INTEGER PRIMARY KEY   AUTOINCREMENT,
+       concept           TEXT    NOT NULL,
+       location           TEXT    ,
+       person           TEXT    ,
+       DATE            DATETIME     NOT NULL);''')
+
+cursor.execute('''CREATE TABLE profile
+       (ID INTEGER PRIMARY KEY   AUTOINCREMENT,
+       item          TEXT,
+       value        TEXT);''')
+
+
+ADJP
+
+RM.execute("insert into memory (concept, location, person,DATE) values (?, ?, ?, ?)",(a, b, c, dt))
+RM.execute("insert into RAW_INPUT (RAW, DATE) values (?, ?)",(s, dt))
+cursor.execute('''UPDATE memory SET location  = ? WHERE concept = ? ''',(b, a))
+RM.commit()
+
+cursor.execute('''SELECT value FROM profile WHERE item =?''', (item,))
+
+user_id = 'cat'
+cursor.execute('''SELECT concept, location, person FROM memory WHERE concept =?''', (user_id,))
+user = cursor.fetchone()
+
+conjugate('be', '3sg') add 3sg (person) to database 
