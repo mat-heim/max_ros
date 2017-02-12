@@ -87,3 +87,6 @@ ENV/
 
 # Rope project settings
 .ropeproject
+/max_ai/src/max_ai/data/emotion.pkl
+/max_chat/nodes/data/learnt.aiml
+/max_chat/nodes/data/unk_text.txt
