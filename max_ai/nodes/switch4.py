@@ -41,6 +41,7 @@ class PhoenixControl():
    
         rospy.Service('cmd_server', Cmd, self.max_Cmd)
         self.task = ""
+        self.value =""
         self.emotion_task = ""
         self.run_control = 'start'
         # The root node when all top levels tasks have SUCCESS: program exits
@@ -97,7 +98,7 @@ class PhoenixControl():
             FACIAL_GESTURES.add_child(ANGRY)
             FACIAL_GESTURES.add_child(STOP)
 
-        # Add the battery check and recharge tasks to the "stay healthy" task
+            # Add the battery check and recharge tasks to the "stay healthy" task
         with STAY_HEALTHY:
             # Monitor the fake battery level by subscribing to the /battery_level topic
             MONITOR_BATTERY = MonitorTask("MONITOR_BATTERY", "battery_level", Float32, self.monitor_battery)
@@ -228,12 +229,14 @@ class PhoenixControl():
     def stop_task(self):
         self.task = ''
         self.run_control = ''
+        self.value =""
         #rospy.loginfo("stop task: ")
         return TaskStatus.SUCCESS        
 
     def max_Cmd(self, req):
         self.task = str(req.name)
-        #print "moving to " + self.task
+        self.value = str(req.value)
+        print "moving to " + self.task
         return CmdResponse()   
 
     def monitor_battery(self, msg):

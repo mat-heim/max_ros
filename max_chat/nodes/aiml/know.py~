@@ -1,0 +1,14 @@
+#! /usr/bin/env python
+
+
+
+
+
+def Test(text):
+    k = text + "call "
+    print k
+    return k
+
+def euro():
+    print "high"
+        

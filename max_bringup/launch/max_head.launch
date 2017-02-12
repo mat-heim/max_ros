@@ -1,12 +1,16 @@
 <launch>
 
+<node name="max_base" pkg="ros_arduino_python" type="arduino_node.py" output="screen">
+      <rosparam file="$(find max_ros)/config/arduino_params.yaml" command="load" />
+   </node>
+
 
 
 <!--<include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch" /> -->
 
 
-<!-- start Max's voice --> 
-  <node name="soundplay_node" pkg="sound_play" type="soundplay_node.py" output="screen"/>
+<!-- start Max's voice 
+  <node name="soundplay_node" pkg="sound_play" type="soundplay_node.py" output="screen"/>-->
 
 <arg name="battery_runtime" default="300"/> 
 
@@ -19,8 +23,8 @@
       <rosparam file="$(find max_bringup)/config/max_head.yaml" command="load" />
    </node>
    <!-- start Max's chat engine -->
-   <node name="max_chat" pkg="max_ai" type="cmd.py" output="screen"/>
+   <node name="max_chat" pkg="max_ai" type="cmd1.py" output="screen"/>
 
    <!-- start Max's behaviour engine -->
-
+   <node name="max_ai" pkg="max_ai" type="switch4.py" output="screen"/>
 </launch>

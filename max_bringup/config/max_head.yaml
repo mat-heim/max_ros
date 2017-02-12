@@ -1,4 +1,4 @@
-port: /dev/ttyUSB0
+port: /dev/sensors/ch341
 baudRate: 9600
 
 

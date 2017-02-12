@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+ 
+<aiml version="1.0.1" xmlns="http://alicebot.org/2001/AIML-1.0.1"
+      xmlns:html="http://www.w3.org/1999/xhtml"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://alicebot.org/2001/AIML-1.0.1 http://aitools.org/aiml/schema/AIML.xsd">
+ 
+
+<category>
+<pattern>TURN RIGHT</pattern>
+<template>
+<javascript>
+turn , right
+</javascript>
+</template>
+</category>
+
+<category>
+<pattern>TURN LEFT</pattern>
+<template>
+<javascript>
+turn , left
+</javascript>
+</template>
+</category>
+
+<category>
+<pattern>MOVE FORWARD</pattern>
+<template>
+<javascript>
+move , forward
+</javascript>
+</template>
+</category>
+
+<category>
+<pattern>MOVE BACKWARDS</pattern>
+<template>
+<javascript>
+move , backwards
+</javascript>
+</template>
+</category>
+
+<category>
+<pattern>MOVE RIGHT</pattern>
+<template>
+<javascript>
+move , right
+</javascript>
+</template>
+</category>
+
+<category>
+<pattern>MOVE LEFT</pattern>
+<template>
+<javascript>
+move , left
+</javascript>
+</template>
+</category>
+
+<category>
+<pattern>LOOK LEFT</pattern>
+<template>
+<javascript>
+look , left
+</javascript>
+</template>
+</category>
+
+<category>
+<pattern>LOOK RIGHT</pattern>
+<template>
+<javascript>
+look , right
+</javascript>
+</template>
+</category>
+
+<category>
+<pattern>LOOK UP</pattern>
+<template>
+<javascript>
+look , up
+</javascript>
+</template>
+</category>
+
+<category>
+<pattern>LOOK DOWN</pattern>
+<template>
+<javascript>
+look , down
+</javascript>
+</template>
+</category>
+
+<category>
+<pattern>LOOK FRONT</pattern>
+<template>
+<javascript>
+look , front
+</javascript>
+</template>
+</category>
+
+<category>
+<pattern>WEATHER</pattern>
+<template>
+<javascript>
+weather , 0
+</javascript>
+</template>
+</category>
+
+<category>
+<pattern>KITCHEN</pattern>
+<template>
+<javascript>
+goto , kitchen
+</javascript>
+</template>
+</category>
+
+<category>
+<pattern>BATHROOM</pattern>
+<template>
+<javascript>
+goto , bathroom
+</javascript>
+</template>
+</category>
+
+<category>
+<pattern>TIM ROOM</pattern>
+<template>
+<javascript>
+goto , tims_room
+</javascript>
+</template>
+</category>
+
+<category>
+<pattern>MAT ROOM</pattern>
+<template>
+<javascript>
+goto , mats_room
+</javascript>
+</template>
+</category>
+
+<category>
+<pattern>AUTODOCK</pattern>
+<template>
+<javascript>
+goto , auto_dock
+</javascript>
+</template>
+</category>
+
+<category>
+<pattern>HAPPY</pattern>
+<template>
+<javascript>
+happy , 0
+</javascript>
+</template>
+</category>
+
+<category>
+<pattern>START</pattern>
+<template>
+<javascript>
+start , 0
+</javascript>
+</template>
+</category>
+
+<category>
+<pattern>SAD</pattern>
+<template>
+<javascript>
+sad , 0
+</javascript>
+</template>
+</category>
+
+<category>
+<pattern>STOP</pattern>
+<template>
+<javascript>
+stop , 0
+</javascript>
+</template>
+</category>
+
+<category>
+<pattern>ANGRY</pattern>
+<template>
+<javascript>
+angry , 0
+</javascript>
+</template>
+</category>
+
+<category>
+<pattern>ROBBIE TERMINATE</pattern>
+<template>Good Bye  
+<system>/home/robbie/catkin_ws/src/robbie_ros/./Shut_down.sh</system>
+</template>
+</category>
+
+<category>
+<pattern>ROBBIE SHUTDOWN</pattern>
+<template>Good Bye  
+<system>/home/robbie/catkin_ws/src/robbie_ros/./Shut_down.sh</system>
+</template>
+</category>
+
+
+
+
+
+
+
+
+
+</aiml>
+
